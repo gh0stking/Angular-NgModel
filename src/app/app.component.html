@@ -1,0 +1,89 @@
+<div class="user-form">
+  <h2>填写用户信息</h2>
+  <div>
+    用户名：
+    <m-inputText [(ngModel)]='user.UserName' (input)="changeUserName()"></m-inputText>
+  </div>
+
+  <div>
+    密　码：
+    <m-inputText type="password" [(ngModel)]='user.UserPassword'></m-inputText>
+  </div>
+
+  <div>
+    性　别：
+    <m-radio [(ngModel)]='user.Sex' name="sex" value="0" label="男"></m-radio>
+    <m-radio [(ngModel)]='user.Sex' name="sex" value="1" label="女"></m-radio>
+  </div>
+
+  <div>
+    生　日：
+    <m-inputText type="date" [(ngModel)]='user.Birth' [width]="150"></m-inputText>
+  </div>
+
+  <div>
+    籍　贯：
+    <m-select [(ngModel)]='user.City' [width]="150" (change)="changeCity()">
+      <option *ngFor='let t of cities' value="{{t.id}}">{{t.name}}</option>
+    </m-select>
+  </div>
+
+  <div>
+    状　态：
+    <m-checkbox [(ngModel)]='user.Status' label="有效"></m-checkbox>
+  </div>
+
+  <div>
+    薪　资：
+    <m-inputText type="number" [(ngModel)]='user.Salary'></m-inputText>
+  </div>
+
+  <div>
+    备　注：
+    <m-textarea [(ngModel)]='user.Note'></m-textarea>
+  </div>
+
+  <button type="button">提交</button>
+</div>
+
+<div class="user-info">
+  <table border="1" cellspacing="0" cellpadding="0">
+    <caption>
+      <h2>用户信息一览表</h2>
+    </caption>
+    <tr>
+      <td class="user-info-label">用户名：</td>
+      <td>{{user.UserName}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">密码：</td>
+      <td>{{user.UserPassword}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">性别：</td>
+      <td>{{user.Sex=="0"?"男":"女"}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">生日：</td>
+      <td>{{user.Birth}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">籍贯：</td>
+      <td>{{user.City}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">状态：</td>
+      <td>{{user.Status?"有效":"无效"}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">薪资：</td>
+      <td>{{user.Salary}}</td>
+    </tr>
+    <tr>
+      <td class="user-info-label">备注：</td>
+      <td>{{user.Note}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="clear:both"></div>

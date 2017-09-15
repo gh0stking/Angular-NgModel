@@ -1,0 +1,17 @@
+.user-form,.user-info{
+    float:left;
+    width:50%;
+}
+
+.user-info > table{
+    width:100%;
+}
+
+.user-info .user-info-label{
+    width:100px;
+    text-align:right;
+}
+
+.form-input{
+    width:150px;
+}
